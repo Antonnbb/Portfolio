@@ -237,11 +237,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
+ {/* FOOTER */}
       <footer className="border-t border-white/[0.07] px-6 py-8">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 text-sm text-zinc-500">
-          <p>© 2026 Anton Kiili. Kaikki oikeudet pidätetään.</p>
-          <a href="#home" className="transition hover:text-white">Takaisin ylös ↑</a>
+        <div className="relative mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 sm:flex-row">
+          <p className="text-center text-sm text-zinc-500">
+            © 2026 Anton Kiili. Kaikki oikeudet pidätetään.
+          </p>
+
+          <a
+            href="#home"
+            className="inline-flex items-center gap-2 rounded-lg border border-violet-400/30 bg-violet-500/10 px-4 py-2 text-sm font-medium text-violet-200 transition hover:border-violet-400 hover:bg-violet-600 hover:text-white sm:absolute sm:right-0"
+          >
+            Takaisin ylös ↑
+          </a>
         </div>
       </footer>
     </main>

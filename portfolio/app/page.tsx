@@ -18,8 +18,8 @@ const projects = [
     name: "Treeni-ohjelma",
     category: "Web-sovellus",
     description:
-      "Treenien lisäämiseen ja hallintaan rakennettu web-sovellus, jossa on erillinen backend-palvelin, tietokantayhteys ja käyttöliittymä.",
-    technologies: ["JavaScript", "Node.js", "React", "Vite"],
+      "Treenien lisäämiseen ja hallintaan rakennettu web-sovellus, jossa on erillinen backend-palvelin, Supabase-tietokanta ja käyttöliittymä.",
+    technologies: ["JavaScript", "Node.js", "React", "Vite", "Supabase"],
     apis: ["Oma backend REST API"],
     status: "Projektityö (Julkaistu)",
     githubUrl: "https://github.com/Antonnbb/Treeni-ohjelma",
@@ -31,7 +31,7 @@ const projects = [
     category: "Web-sovellus",
     description:
       "Laajempi treenien seurantaan tarkoitettu sovellus, jossa on käyttäjätilit (rekisteröinti ja kirjautuminen), treenien lisäys, koontinäkymä ja analyysi.",
-    technologies: ["JavaScript", "Node.js", "React", "Vite"],
+    technologies: ["JavaScript", "Node.js", "React", "Vite", "Supabase"],
     apis: ["Oma backend REST API"],
     status: "Projektityö",
     githubUrl: "https://github.com/Antonnbb/Treenikalenteri",
@@ -43,7 +43,7 @@ const projects = [
     category: "Web-sovellus",
     description:
       "Selainpohjainen pelisovellus, jossa on useita treeni- ja testitiloja (mm. tähtäys-, reaktio- ja seurantatestit), tulostaulukko, profiili sekä kirjautuminen.",
-    technologies: ["JavaScript", "Node.js", "React", "Vite"],
+    technologies: ["JavaScript", "Node.js", "React", "Vite", "Supabase"],
     apis: ["Oma backend REST API"],
     status: "Projektityö",
     githubUrl: "https://github.com/Antonnbb/Nettipeli",
@@ -159,7 +159,7 @@ export default function Home() {
               tietokantojen sekä API-rajapintojen parissa.
             </p>
             <p>
-              Haluan jatkuvasti oppia uutta, kehittää omaa osaamistani
+              Tykkään oppia uusia teknologioita, kehittää omaa osaamistani
               ja päästä toteuttamaan käytännön projekteja.
             </p>
           </div>

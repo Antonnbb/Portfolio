@@ -1,14 +1,13 @@
-import Navbar from "./components/Navbar"; // tai "../components/Navbar", riippuen kansiorakenteestasi
+"use client";
+
+import Navbar from "./components/Navbar";
+import ProjectCard from "./components/ProjectCard";
+import { useState } from "react";
 
 import {
   ArrowUpRight,
   Mail,
   Code2,
-  Monitor,
-  Database,
-  Globe,
-  Layers3,
-  Terminal,
   ExternalLink,
   ChevronDown,
 } from "lucide-react";
@@ -21,10 +20,10 @@ const projects = [
     description:
       "Treenien lisäämiseen ja hallintaan rakennettu web-sovellus, jossa on erillinen backend-palvelin, tietokantayhteys ja käyttöliittymä.",
     technologies: ["JavaScript", "Node.js", "React", "Vite"],
-    apis: ["Oma backend REST API"], // Tarkista ja täydennä tarvittaessa index.js / frontend-koodista
-    status: "Projektityö",
-    githubUrl: "https://github.com/Antonnbb/Treeni-ohjelma.git",
-    liveUrl: "https://treeni-ohjelma.onrender.com/", // Lisää julkaisulinkki jos sovellus on julkaistu
+    apis: ["Oma backend REST API"],
+    status: "Projektityö (Julkaistu)",
+    githubUrl: "https://github.com/Antonnbb/Treeni-ohjelma",
+    liveUrl: "https://treeni-ohjelma.onrender.com/",
   },
   {
     number: "02",
@@ -33,9 +32,9 @@ const projects = [
     description:
       "Laajempi treenien seurantaan tarkoitettu sovellus, jossa on käyttäjätilit (rekisteröinti ja kirjautuminen), treenien lisäys, koontinäkymä ja analyysi.",
     technologies: ["JavaScript", "Node.js", "React", "Vite"],
-    apis: ["Oma backend REST API"], // Tarkista frontend/pages/api.js ja backend index.js
+    apis: ["Oma backend REST API"],
     status: "Projektityö",
-    githubUrl: "https://github.com/Antonnbb/Treenikalenteri.git",
+    githubUrl: "https://github.com/Antonnbb/Treenikalenteri",
     liveUrl: "",
   },
   {
@@ -45,9 +44,9 @@ const projects = [
     description:
       "Selainpohjainen pelisovellus, jossa on useita treeni- ja testitiloja (mm. tähtäys-, reaktio- ja seurantatestit), tulostaulukko, profiili sekä kirjautuminen.",
     technologies: ["JavaScript", "Node.js", "React", "Vite"],
-    apis: ["Oma backend REST API"], // Tarkista backend index.js ja frontend-kutsut
+    apis: ["Oma backend REST API"],
     status: "Projektityö",
-    githubUrl: "https://github.com/Antonnbb/Nettipeli.git",
+    githubUrl: "https://github.com/Antonnbb/Nettipeli",
     liveUrl: "",
   },
 ];
@@ -66,7 +65,6 @@ const skills = [
   { name: "REST API", type: "Rajapinnat" },
   { name: "Git & GitHub", type: "Työkalut" },
 ];
-
 
 export default function Home() {
   return (
@@ -181,39 +179,9 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
-              <article
-                key={project.number}
-                className="group rounded-2xl border border-white/[0.08] bg-[#111115] p-7 transition duration-300 hover:-translate-y-1 hover:border-violet-400/40"
-              >
-                <div className="mb-10 flex items-center justify-between">
-                  <span className="font-mono text-sm text-violet-400">{project.number}</span>
-                  <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-zinc-400">
-                    {project.category}
-                  </span>
-                </div>
-
-                <h3 className="text-3xl font-bold">{project.name}</h3>
-                <p className="mt-5 min-h-24 leading-7 text-zinc-400">
-                  {project.description}
-                </p>
-
-                <div className="mt-7 flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span key={tech} className="rounded-md bg-white/[0.06] px-3 py-1.5 text-xs text-zinc-300">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="mt-9 flex items-center justify-between border-t border-white/10 pt-5">
-                  <span className="text-xs text-zinc-500">{project.status}</span>
-                  <a href="#yhteystiedot" className="flex items-center gap-2 text-sm text-violet-300 transition hover:text-white">
-                    Projektin linkit <ArrowUpRight size={16} />
-                  </a>
-                </div>
-              </article>
+              <ProjectCard key={project.number} project={project} />
             ))}
           </div>
         </div>
@@ -259,10 +227,10 @@ export default function Home() {
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <a href="mailto:LISAA-SAHKOPOSTI" className="flex items-center gap-2 rounded-lg bg-violet-600 px-6 py-4 text-sm font-semibold transition hover:bg-violet-500">
+            <a href="mailto:antonok.kiili@gmail.com" className="flex items-center gap-2 rounded-lg bg-violet-600 px-6 py-4 text-sm font-semibold transition hover:bg-violet-500">
               <Mail size={17} /> Lähetä sähköpostia
             </a>
-            <a href="LISAA-GITHUB-LINKKI" target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-lg border border-white/10 px-6 py-4 text-sm font-semibold transition hover:bg-white/5">
+            <a href="https://github.com/Antonnbb" target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-lg border border-white/10 px-6 py-4 text-sm font-semibold transition hover:bg-white/5">
               <Code2 size={18} /> GitHub <ExternalLink size={14} />
             </a>
           </div>
@@ -279,4 +247,3 @@ export default function Home() {
     </main>
   );
 }
-
